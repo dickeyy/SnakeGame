@@ -169,6 +169,8 @@ def gameLoop():
  
     pygame.quit()
     print("Game Terminated.")
+    print("Thanks for playing! https://kyledickey.me")
+    time.sleep(5)
     quit()
  
  
