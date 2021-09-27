@@ -1,0 +1,3 @@
+([('main',
+   '/Users/kyledickey/Documents/Code/Testing/Snake.py/dist/main',
+   'EXECUTABLE')],)
