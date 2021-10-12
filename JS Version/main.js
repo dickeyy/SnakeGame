@@ -26,8 +26,11 @@ main();
 gen_food();
     
 function main() {
-
-    if (has_game_ended()) return;
+    if (has_game_ended()) {
+        document.getElementById("gameOver").style.color = "red";
+        document.getElementById("gameOver").innerHTML = "You Lose! Press R to play again.";
+        return;
+    }
 
     changing_direction = false;
     setTimeout(function onTick() {
@@ -75,7 +78,12 @@ function change_direction(event) {
     const D_KEY = 68;
     const W_KEY = 87;
     const S_KEY = 83;
-
+    const R_KEY = 82;
+    const UP_KEY = 38;
+    const DOWN_KEY = 40;
+    const RIGHT_KEY = 39;
+    const LEFT_KEY = 37;
+ 
     const keyPressed = event.keyCode;
     const goingUp = dy === -10;
     const goingDown = dy === 10;
@@ -97,6 +105,25 @@ function change_direction(event) {
     if (keyPressed === S_KEY && !goingUp) {
         dx = 0;
         dy = 10;
+    }
+    if (keyPressed === UP_KEY && !goingDown) {
+        dx = 0;
+        dy = -10;
+    }
+    if (keyPressed === DOWN_KEY && !goingUp) {
+        dx = 0;
+        dy = 10;
+    }
+    if (keyPressed === RIGHT_KEY && !goingLeft) {
+        dx = 10;
+        dy = 0;
+    }
+    if (keyPressed === LEFT_KEY && !goingRight) {
+        dx = -10;
+        dy = 0;
+    }
+    if (keyPressed === R_KEY) {
+        location.reload()
     }
 }
 
