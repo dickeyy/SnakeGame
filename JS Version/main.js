@@ -71,10 +71,10 @@ function move_snake() {
 }
 
 function change_direction(event) {
-    const LEFT_KEY = 37;
-    const RIGHT_KEY = 39;
-    const UP_KEY = 38;
-    const DOWN_KEY = 40;
+    const a_KEY = 37;
+    const d_KEY = 39;
+    const w_KEY = 38;
+    const s_KEY = 40;
 
     const keyPressed = event.keyCode;
     const goingUp = dy === -10;
@@ -82,19 +82,19 @@ function change_direction(event) {
     const goingRight = dx === 10;
     const goingLeft = dx === -10;
 
-    if (keyPressed === LEFT_KEY && !goingRight) {
+    if (keyPressed === a_KEY && !goingRight) {
         dx = -10;
         dy = 0;
     }
-    if (keyPressed === RIGHT_KEY && !goingLeft) {
+    if (keyPressed === d_KEY && !goingLeft) {
         dx = 10;
         dy = 0;
     }
-    if (keyPressed === UP_KEY && !goingDown) {
+    if (keyPressed === w_KEY && !goingDown) {
         dx = 0;
         dy = -10;
     }
-    if (keyPressed === DOWN_KEY && !goingUp) {
+    if (keyPressed === s_KEY && !goingUp) {
         dx = 0;
         dy = 10;
     }
